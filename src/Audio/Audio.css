@@ -1,0 +1,230 @@
+.audio {
+  display: block;
+  width: 90%;
+  margin-left: 5%;
+  background-color: grey;
+  color: white;
+}
+.audio__tag {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.audio__container {
+  display: block;
+  width: calc(100% - 100px);
+  margin: auto;
+  padding: 50px 0;
+}
+
+.audio__header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.audio__header > div {
+  flex: 1;
+}
+
+.audio__header > div:first-child {
+  flex: 0 0 100px;
+}
+
+.audio__header-title {
+  text-align: left;
+}
+
+.audio__header-title p,
+.audio__header-title h1 {
+  margin: 0 0 10px 20px;
+}
+
+.audio__controls {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.audio__footer {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.audio__footer ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.audio__footer li {
+  margin-right: 40px;
+  display: inline-block;
+}
+
+.audio__footer a {
+  color: white;
+  padding: 0 0 0 20px;
+  position: relative;
+}
+
+.audio__footer a::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+}
+
+.audio__button {
+  position: relative;
+  background: transparent;
+  color: transparent;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.audio__button[disabled="true"] {
+  opacity: 0.2;
+}
+
+.audio__button::after {
+  position: absolute;
+  content: "";
+}
+
+.audio__button--play::after {
+  left: calc(50% - 10px);
+  top: calc(50% - 17px);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 34.6px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.audio__button--pause::after {
+  left: calc(50% - 18px);
+  top: calc(50% - 18px);
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+}
+
+.audio__button--forward,
+.audio__button--backward {
+  width: 26px;
+  height: 26px;
+}
+.audio__button--forward {
+  margin-left: 10px;
+}
+.audio__button--forward::after,
+.audio__button--backward::after {
+  left: calc(50% - 10px);
+  top: -5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 10.4px;
+  border-color: transparent transparent transparent #ffffff;
+  transform: rotate(-20deg);
+}
+.audio__button--backward::after {
+  left: calc(50% - 0px);
+}
+
+.audio__button--forward::before,
+.audio__button--backward::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  top: -4px;
+  right: 4px;
+  background-color: grey;
+}
+.audio__button--backward::before {
+  top: -4px;
+  right: auto;
+  left: 3px;
+  background-color: grey;
+}
+
+.audio--fixed {
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: 0px -4px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.audio--fixed .audio__container {
+  padding: 0;
+  max-height: 114px;
+}
+
+.audio--fixed .audio__header-title h1 {
+  display: none;
+  margin: 0;
+}
+
+.audio--fixed .audio__header-title p {
+  margin: 0 0 0 20px;
+}
+
+.audio--fixed .audio__controls {
+  position: relative;
+  top: -40px;
+  margin-left: 120px;
+  padding-left: 0;
+}
+
+.audio--fixed .audio__button {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 1px solid #000000;
+}
+
+.audio--fixed .audio__button--play::after {
+  left: calc(50% - 7.5px);
+  top: calc(50% - 13px);
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #000000;
+}
+
+.audio--fixed .audio__button--pause::after {
+  left: calc(50% - 13px);
+  top: calc(50% - 13px);
+  width: 26px;
+  height: 26px;
+  background-color: #000000;
+}
+
+.audio--fixed .audio__button--forward,
+.audio--fixed .audio__button--backward {
+  width: 26px;
+  height: 26px;
+}
+.audio--fixed .audio__button--forward::after,
+.audio--fixed .audio__button--backward::after {
+  border-color: transparent transparent transparent #000000;
+}
+
+.audio--fixed .audio__button--forward::before,
+.audio--fixed .audio__button--backward::before {
+  background-color: #ffffff;
+}
+.audio--fixed .audio__button--backward::before {
+  background-color: #ffffff;
+}
